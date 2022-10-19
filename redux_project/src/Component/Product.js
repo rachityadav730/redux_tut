@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import {add,remove} from '../store/cartSlice'
+
 const Product = () => {
+
+  // const slect = useSelector()
+
+  const dispatch =useDispatch()
 
 
     const [products,setproducts] =useState([])
@@ -22,24 +31,35 @@ const Product = () => {
 
     },[])
 
+    const AddtoCart =(product)=>{
+
+      console.log("productproduct",product)
+
+      dispatch(add(product))
+
+    }
+
 
   return (
     <div>
       <h1>
         Products
       </h1>
+      <div style={{display:"flex",flexWrap:"wrap"}}>
 {
       products.map((product) => {
-return(
-        <div>
+      return(
+        
+        <div style={{width:"30%",marginBottom:"5%"}}>
             <img src={product.image} style ={{height:"80px"}}/>
             <h4 ></h4>
             <h3>{product.title}</h3>
             <h3>{product.price}</h3>
-            <button>Add to cart</button>
-            </div>
+            <button onClick={()=>AddtoCart(product)}>Add to cart</button>
+         </div>
        )})
     }
+    </div>
     </div>
   )
 }

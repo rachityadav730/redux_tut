@@ -9,11 +9,13 @@ const NavBar = () => {
       </h1>
 
             <Router>
-              <Link to="/">Home</Link>
+              <Link to="/" >Home</Link>
               <br>
               </br>
               <Link to="/cart">Cart</Link>
             </Router>
+
+            
               
  
 

@@ -1,5 +1,24 @@
 {
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2"
-  }
+  },
+  "name": "exit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachityadav730/redux_tut.gi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachityadav730/redux_tut.gi/issues"
+  },
+  "homepage": "https://github.com/rachityadav730/redux_tut.gi#readme",
+  "description": ""
 }
