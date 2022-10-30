@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-
+import useTitleCount from '../CustomHook/TitleCount';
+import useFetch from '../CustomHook/useFetch';
+import useCustomState from '../CustomHook/useCustomState'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -9,7 +10,13 @@ import {add,remove} from '../store/cartSlice'
 const Product = () => {
 
   // const slect = useSelector()
+  const [count,setCount] =useState(0)
+  const [initValue,setInitValue] =useCustomState(0)
+  useTitleCount(count)
+  const [data]  = useFetch("https://jsonplaceholder.typicode.com/todos")
+  console.log("data1231231",data)
 
+  // const TitleCount = useTitleCount()
   const dispatch =useDispatch()
 
 
@@ -33,8 +40,14 @@ const Product = () => {
 
     const AddtoCart =(product)=>{
 
-      console.log("productproduct",product)
+      
+      
 
+      setCount(count+1)
+
+      setInitValue(count+1)
+      // initValue
+      console.log("initValue",initValue)
       dispatch(add(product))
 
     }
